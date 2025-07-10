@@ -2,9 +2,9 @@
   "name": "prof-pitcher",
   "version": "1.0.0",
   "description": "Übersetzt Professorenaussagen in einfache oder ironische Sprache (Gen Z).",
-  "main": "api/translate.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node api/translate.js"
+    "start": "node server.js"
   },
   "author": "Luka & Lukas",
   "license": "MIT",
