@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prof Pitcher</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main>
+        <h1>🎓 Prof Pitcher</h1>
+        <p>Gib eine Aussage ein, und wir übersetzen sie in:</p>
+        <ul>
+            <li><strong>🧠 Einfach erklärt</strong></li>
+            <li><strong>😎 Gen Z Slang</strong></li>
+        </ul>
+
+        <label for="input-text" class="sr-only">Aussage eingeben:</label>
+        <textarea id="input-text" placeholder="Z.B. 'Die differenzierte Perspektive ist essentiell.'" aria-label="Eingabetext"></textarea>
+
+        <div class="button-group">
+            <button id="simple-btn" aria-label="Einfach erklären">🧠 Einfach</button>
+            <button id="genz-btn" aria-label="Gen Z Slang">😎 Gen Z</button>
+        </div>
+
+        <section>
+            <h2>🧠 Einfach erklärt</h2>
+            <p id="simple-output" class="output" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>😎 Gen Z</h2>
+            <p id="genz-output" class="output" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Erstellt von Luka &amp; Lukas – DHBW Web Engineering Projekt</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

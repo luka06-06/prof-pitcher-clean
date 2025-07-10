@@ -1,0 +1,108 @@
+/* Grundlayout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 2rem;
+  color: #222;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Überschriften */
+h1, h2 {
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+#simple-btn {
+  background-color: #007bff;
+}
+
+#simple-btn:hover {
+  background-color: #0056b3;
+}
+
+#genz-btn {
+  background-color: #28a745;
+}
+
+#genz-btn:hover {
+  background-color: #1e7e34;
+}
+
+/* Ausgabe-Bereiche */
+.output {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 60px;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+/* Ladezustand */
+.output.loading {
+  color: #888;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Screenreader only */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
