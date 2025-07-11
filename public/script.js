@@ -88,3 +88,12 @@ class ProfPitcher {
 document.addEventListener('DOMContentLoaded', () => {
     new ProfPitcher();
 });
+document.addEventListener('DOMContentLoaded', () => {
+    new ProfPitcher();
+
+    const toggleBtn = document.getElementById('darkmode-toggle');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('darkmode');
+    });
+});
+

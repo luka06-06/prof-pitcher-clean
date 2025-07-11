@@ -28,15 +28,18 @@ h1 {
 
 /* Textarea */
 textarea {
-  width: 100%;
+  width: 80%;
+  max-width: 600px;
   min-height: 120px;
   padding: 1rem;
   font-size: 1rem;
   border: 2px solid #ccc;
   border-radius: 8px;
   resize: vertical;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
+  display: block;
 }
+
 
 /* Buttons */
 .button-group {
@@ -105,4 +108,55 @@ footer {
   height: 1px;
   top: auto;
   overflow: hidden;
+}
+
+/* Darkmode Styles */
+body.darkmode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.darkmode main {
+  background-color: #1e1e1e;
+}
+
+body.darkmode textarea,
+body.darkmode .output {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+body.darkmode button {
+  filter: brightness(0.9);
+  color: white;
+}
+
+body.darkmode button:hover {
+  filter: brightness(1.1);
+}
+
+body.darkmode h1,
+body.darkmode h2 {
+  color: #f0f0f0;
+}
+
+body.darkmode footer {
+  color: #aaa;
+}
+
+/* Darkmode Toggle Button */
+#darkmode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #666;
+}
+
+body.darkmode #darkmode-toggle {
+  color: #ddd;
 }
