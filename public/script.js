@@ -96,4 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('darkmode');
     });
 });
+// Ctrl+A Begrenzung auf Ausgabefelder
+    const outputs = [document.getElementById('simple-output'), document.getElementById('genz-output')];
+
+    outputs.forEach(output => {
+        output.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key.toLowerCase() === 'a') {
+                e.preventDefault();
+                const range = document.createRange();
+                range.selectNodeContents(output);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        });
+    });
 
