@@ -26,9 +26,7 @@ prof-pitcher/
 │   ├── index.html               # HTML Oberfläche
 │   ├── styles.css               # Styling
 │   ├── script.js                # Hauptlogik 
-│   ├── main.js                  # App-Initialisierung 
 │   ├── validation.js            # Eingabeprüfung
-│   └── ...
 ├── server.js                    # Express Webserver
 ├── package.json                 # npm-Konfiguration
 ├── README.md                    # Diese Datei
