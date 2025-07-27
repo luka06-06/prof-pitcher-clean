@@ -113,7 +113,7 @@ Fehler werden benutzerfreundlich im Interface angezeigt.
 
 ## 👨‍💻 Autoren
 
-- **Luka B.**
+- **Luka L.**
 - **Lukas B.**
 
 Projekt im Rahmen des Studiengangs **Angewandte Informatik (DHBW)**  
