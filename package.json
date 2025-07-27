@@ -2,10 +2,11 @@
   "name": "prof-pitcher",
   "version": "1.0.0",
   "description": "Übersetzt Professorenaussagen in einfache oder ironische Sprache (Gen Z).",
- "main": "api/translate.js",
-"scripts": {
-  "start": "node api/translate.js"
-},
+  "main": "api/translate.js",
+  "scripts": {
+    "start": "node api/translate.js",
+    "test": "jest"
+  },
   "author": "Luka & Lukas",
   "license": "MIT",
   "dependencies": {
@@ -13,5 +14,20 @@
     "dotenv": "^17.0.0",
     "express": "^5.1.0",
     "openai": "^5.8.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luka06-06/prof-pitcher-clean.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/luka06-06/prof-pitcher-clean/issues"
+  },
+  "homepage": "https://github.com/luka06-06/prof-pitcher-clean#readme",
+  "devDependencies": {
+    "jest": "^30.0.5"
   }
 }

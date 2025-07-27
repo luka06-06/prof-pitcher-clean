@@ -1,3 +1,21 @@
+function validateInput(text) {
+    if (!text || text.trim().length === 0) {
+        throw new Error("Text ist erforderlich.");
+    }
+
+    const trimmed = text.trim();
+
+    if (trimmed.length < 5) {
+        throw new Error("Text muss mindestens 5 Zeichen lang sein.");
+    }
+
+    if (trimmed.length > 1000) {
+        throw new Error("Text darf maximal 1000 Zeichen lang sein.");
+    }
+
+    return trimmed;
+}
+
 class ProfPitcher {
     constructor() {
         this.inputText = document.getElementById('input-text');
@@ -21,16 +39,18 @@ class ProfPitcher {
     }
 
     async handleTranslation(type) {
-        const text = this.inputText.value.trim();
-
-        if (!text) {
-            this.showError('Bitte gib zuerst einen Text ein!');
-            this.inputText.focus();
-            return;
-        }
+        let text;
 
         const outputElement = type === 'genz' ? this.genzOutput : this.simpleOutput;
         const button = type === 'genz' ? this.genzBtn : this.simpleBtn;
+
+        try {
+            text = validateInput(this.inputText.value);
+        } catch (validationError) {
+            this.displayError(outputElement, validationError.message);
+            this.inputText.focus();
+            return;
+        }
 
         this.setLoadingState(button, outputElement, true);
 
@@ -48,7 +68,12 @@ class ProfPitcher {
             }
 
             const data = await response.json();
-            this.displayResult(outputElement, data.result);
+
+            outputElement.innerText = '';
+            setTimeout(() => {
+                const label = type === 'genz' ? 'Gen Z: ' : 'Einfach erklärt: ';
+                outputElement.innerText = label + data.result;
+            }, 10);
         } catch (error) {
             this.displayError(outputElement, 'Fehler beim Übersetzen. Bitte versuche es erneut.');
             console.error(error);
@@ -79,15 +104,8 @@ class ProfPitcher {
         element.textContent = message;
         element.style.color = '#dc3545';
     }
-
-    showError(message) {
-        alert(message);
-    }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    new ProfPitcher();
-});
 document.addEventListener('DOMContentLoaded', () => {
     new ProfPitcher();
 
@@ -95,8 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('darkmode');
     });
-});
-// Ctrl+A Begrenzung auf Ausgabefelder
+
+    // Ctrl+A Begrenzung auf Ausgabefelder
     const outputs = [document.getElementById('simple-output'), document.getElementById('genz-output')];
 
     outputs.forEach(output => {
@@ -111,6 +129,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-
-
+});
