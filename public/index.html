@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prof Pitcher</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prof Pitcher</title>
+  <meta name="description" content="Prof Pitcher übersetzt Professoren-Deutsch in einfache oder Gen-Z Sprache.">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div style="position: absolute; top: 1rem; right: 1rem;">
+
+  <!-- Skip-Link für Screenreader-Nutzer -->
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Darkmode Toggle -->
+  <div style="position: absolute; top: 1rem; right: 1rem;">
     <button id="darkmode-toggle" aria-label="Darkmode umschalten">🌓</button>
-    </div>
-    <main>
-        <h1>🎓 Prof Pitcher</h1>
-        <p><strong> gib eine Aussage ein, und wir übersetzen sie:</strong></p>
-        <ul>
-            <li><strong>🧠 Einfach erklärt</strong></li>
-            <li><strong>😎 Gen Z Slang</strong></li>
-        </ul>
+  </div>
 
-        <label for="input-text" class="sr-only">Aussage eingeben:</label>
-        <textarea id="input-text" placeholder="Z.B. 'Die differenzierte Perspektive ist essentiell.'" aria-label="Eingabetext"></textarea>
+  <main id="main-content">
+    <h1>🎓 Prof Pitcher</h1>
+    <p><strong>Gib eine Aussage ein, und wir übersetzen sie:</strong></p>
+    <ul>
+      <li><strong>🧠 Einfach erklärt</strong></li>
+      <li><strong>😎 Gen Z Slang</strong></li>
+    </ul>
 
-        <div class="button-group">
-            <button id="simple-btn" aria-label="Einfach erklären">🧠 Einfach</button>
-            <button id="genz-btn" aria-label="Gen Z Slang">😎 Gen Z</button>
-        </div>
+    <form id="translation-form" aria-labelledby="form-label">
+      <label for="input-text" id="form-label" class="sr-only">Aussage eingeben:</label>
+      <textarea
+        id="input-text"
+        name="text"
+        required
+        minlength="5"
+        maxlength="1000"
+        aria-describedby="input-help"
+        placeholder="Z.B. 'Die differenzierte Perspektive ist essentiell.'"
+        aria-label="Eingabetext">
+      </textarea>
+      <div id="input-help" class="input-help">Bitte gib mindestens 5 Zeichen ein.</div>
 
-        <section>
-            <h2>🧠 Einfach erklärt</h2>
-            <p id="simple-output" class="output" aria-live="polite" tabindex="0"></p>
-        </section>
+      <div class="button-group">
+        <button id="simple-btn" type="button" aria-label="Einfach erklären">🧠 Einfach</button>
+        <button id="genz-btn" type="button" aria-label="Gen Z Slang">😎 Gen Z</button>
+      </div>
+    </form>
 
-        <section>
-            <h2>😎 Gen Z</h2>
-            <p id="genz-output" class="output" aria-live="polite" tabindex="0"></p>
-        </section>
-    </main>
+    <section>
+      <h2>🧠 Einfach erklärt</h2>
+      <p id="simple-output"
+         class="output"
+         aria-live="polite"
+         role="status"
+         aria-atomic="true"
+         tabindex="0"></p>
+    </section>
 
-    <footer>
-        <p>Erstellt von Luka &amp; Lukas – DHBW Web Engineering Projekt</p>
-    </footer>
+    <section>
+      <h2>😎 Gen Z</h2>
+      <p id="genz-output"
+         class="output"
+         aria-live="polite"
+         role="status"
+         aria-atomic="true"
+         tabindex="0"></p>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>Erstellt von Luka &amp; Lukas – DHBW Web Engineering Projekt</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
